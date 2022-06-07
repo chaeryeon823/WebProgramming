@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>강채련</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            /* 바디 */
+            body{
+                background-color:#ECECEC;
+            }
+            /* 프레임 */
+            .frame {
+                margin: 30px 150px;
+                display:flex;
+                flex-direction: column;
+    
+            }
+            /* nav */
+            .navigator {
+                display:flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-family: 'Roboto', sans-serif;
+            }
+    
+            .nav_ul {
+                margin:0px;
+                padding-top: 10px;
+            }
+            .nav_ul>li {
+                display: inline;
+                align-self: center;
+            }
+    
+            .nav_menu{
+                color:black;
+                text-decoration: none;
+                padding-left: 20px;
+                font-size: 18px;
+    
+            }
+            .nav_title {
+                margin:0px;
+                font-size: 25px;
+                font-family: 'Pacifico', cursive;
+    
+            }
+
+            /* 타이틀 */
+            .title {
+                font-family: 'Roboto', sans-serif;
+                font-weight: bold;
+                font-size: 35px;
+            }
+
+            /* 메모 - 캔버스 */
+            .section_canvas {
+                padding-top: 50px;
+            }
+            #myCanvas {
+                border:3.5px solid black;
+                background-color: white;
+            }
+
+            .canvas_option_text {
+                font-family: 'Roboto', sans-serif;
+                font-size: 23px;
+                font-weight: bold;
+            }
+            
+            /* 메모 - 캔버스 옵션 */
+            .canvas_option {
+                margin-top: 10px;
+            }
+            .canvas_table {
+                position: relative;
+                right: 0;
+            }
+            .canvas_table>tbody>tr>td {
+                padding-top: 25px;
+                padding-left: 10px;
+                text-align: left;
+            }
+            #color {
+                width: 70px;
+            }
+
+            /* 링크 - radio / img */
+            .section_radio {
+                padding-top: 50px;
+            }
+
+            .section_radio>hr {
+                border: 2px solid black;
+                background-color: black;
+            }
+            #img {
+                width: 250px;
+                height:80px;
+                padding-top: 10px;
+            }
+            .radio_option_text{
+                font-family: 'Roboto', sans-serif;
+                font-size: 20px;
+                font-weight: bold;
+                padding-left: 5px;
+            }
+        </style>
+    </head>
+    <body id="body">
+        <div class="frame">
+            <nav class="navigator">
+                <h3 class="nav_title">KangChaeRyeon</h3>
+                    <ul class="nav_ul">
+                        <li><a href="Home.html" class="nav_menu">HOME</a></li>
+                        <li><a href="TOPIC.html" class="nav_menu">TOPIC</a></li>
+                        <li><a href="About.html" class="nav_menu">ABOUT</a></li>
+                    </ul>
+            </nav>
+            <section class="section_canvas">
+                <h1 class="title">MEMO</h1>
+                <canvas id="myCanvas" width="1400px" height="200px"></canvas><br>
+                <table class="canvas_table">
+                    <tbody>
+                        <tr>
+                            <td><span class="canvas_option_text">Stroke   </span></td>
+                            <td><input type="text" id="lineWidth" size="5" value="5"></td>
+                            <td><span class="canvas_option_text">Color   </span></td>
+                            <td><input type="color" id="color"></td>
+                        </tr>
+                        <tr>
+                            <td><span class="canvas_option_text">Clear   </span></td>
+                            <td><input type="button" id="eraserBtn" value="지우기"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="section_radio">
+                <hr>
+                <h1 class="title">LINK</h1>
+                <form>
+                    <input type="radio" name="link" value="KongJu.jpg" id="kongju" onclick="radio(this)" checked><span class="radio_option_text">공주대학교</span>
+                    <input type="radio" name="link" value="KdataQ.jpg" id="kdataQ" onclick="radio(this)"><span class="radio_option_text">Kdata 자격검정</span>
+                    <input type="radio" name="link" value="Kdata.jpg" id="kdata" onclick="radio(this)"><span class="radio_option_text">Kdata 한국데이터산업진흥원</span>
+                    <input type="radio" name="link" value="WorkNet.jpg" id="worknet" onclick="radio(this)"><span class="radio_option_text">워크넷</span><br>
+                    
+                </form>
+                <img src="KongJu.jpg" id="img" onmouseover="startTimer(5000, this)" onmouseout="cancelTimer()">
+            </section>
+        </div>
+        <script>
+            // chapter11. HTML5 캔버스 그래픽 - canvas, 캔버스 객체와 마우스 이벤트 활용, 도형그리기와 채우기(캔버스 지우기)
+            function init() {
+                var canvas = document.getElementById("myCanvas");
+                var context = canvas.getContext("2d");
+                var startX, startY, endX, endY, dragging;
+                var eraserBtn=document.getElementById("eraserBtn");
+
+                canvas.addEventListener("mousedown", function (e) { down(e) });
+                canvas.addEventListener("mouseup", function (e) { up(e) });
+                canvas.addEventListener("mousemove", function(e) { move(e) });
+                canvas.addEventListener("mouseout", function (e) { out(e) });
+                eraserBtn.addEventListener("click", function(e) {context.clearRect(0,0, canvas.width, canvas.height);});
+                function down(e) {
+                    dragging = true;
+                    startX = e.offsetX;
+                    startY = e.offsetY;
+                    context.strokeStyle = document.getElementById("color").value;
+                    context.lineWidth = document.getElementById("lineWidth").value;
+                }
+
+                function up(e) {
+                    dragging = false;
+                }
+
+                function out(e) {
+                    dragging = false;
+                }
+
+                function move(e) {
+                    if(dragging) {
+                        endX = e.offsetX;
+                        endY = e.offsetY;
+
+                        context.beginPath();
+                        context.moveTo(startX, startY);
+                        context.lineTo(endX, endY);
+                        context.stroke();
+
+                        startX = e.offsetX;
+                        startY = e.offsetY;
+                    }
+                }
+            }
+            var body=document.getElementById("body");
+            body.onload=init;
+
+            // chapter 10. 윈도우와 브라우저 관련 객체 - window의 타이머 활용, window 객체 메소드(open())
+            function radio(obj) {
+                if(obj.checked==true) {
+                    var img=document.getElementById("img");
+                    img.src=obj.value;
+                }
+            }
+
+            var timerID=null;
+            function startTimer(time, obj) {
+                var url=findUrl();
+                timerID=setTimeout("load('"+url+"')",time);
+                document.getElementById("img").title=url;
+            }
+            function cancelTimer() {
+                if(timerID!=null) {
+                    clearTimeout(timerID);
+                }
+            }
+            
+            function load(url) {
+                window.open(url);
+            }
+            function findUrl() {
+                var url;
+                var radioArr=document.getElementsByName("link");
+                var linkArr=["https://www.kongju.ac.kr/","https://www.dataq.or.kr/","https://www.kdata.or.kr/","https://www.work.go.kr/"];
+                for(i=0;i<radioArr.length;i++) {
+                    if(radioArr[i].checked==true) {
+                        url=linkArr[i];
+                        return url;
+                    }
+                }
+            }
+
+
+
+
+        </script>
+    </body>
+
+</html>

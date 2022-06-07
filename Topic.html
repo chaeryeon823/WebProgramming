@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>강채련</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+        <style>
+            /* html */
+            html {
+                scroll-behavior: smooth
+            }
+
+            /* 바디 */
+            body{
+                background-color:#ECECEC;
+
+            }
+
+            /* 프레임 */
+            .frame {
+                margin: 30px 150px;
+                display:flex;
+                flex-direction: column;
+            }
+
+            /* nav */
+            .navigator {
+                display:flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-family: 'Roboto', sans-serif;
+            }
+    
+            .nav_ul {
+                margin:0px;
+                padding-top: 10px;
+            }
+            .nav_ul>li {
+                display: inline;
+                align-self: center;
+            }
+    
+            .nav_menu{
+                color:black;
+                text-decoration: none;
+                padding-left: 20px;
+                font-size: 18px;
+    
+            }
+            .nav_title {
+                margin:0px;
+                font-size: 25px;
+                font-family: 'Pacifico', cursive;
+    
+            }
+
+            /* 타이틀 */
+            .title {
+                font-size: 35px;
+                margin-top: 70px;
+            }
+
+            /* 본문 내용 */
+            .text {
+                font-size: 18px;
+                text-indent: 2em;
+            }
+
+            /* 앵커 링크 이동 섹션 */
+            .section_move>ul>li {
+                display: inline;
+                list-style-type: none;
+                padding-right: 30px;
+                padding-left: 10px;
+            }
+
+            .section_move>ul>li>a {
+                text-decoration: none;
+                color:black;
+                font-weight: bold;
+                font-size: 20px;
+                
+            }
+            .section_move>ul {
+                background-color: #D3D3D3;
+                padding-left: 0;
+                padding-right: 0;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                margin-top: 30px;
+            }
+
+            /* 테이블 */
+            table {
+                border:3px solid black;
+                border-collapse: collapse;
+            }
+            td, th {
+                border:1px solid black;
+            }
+            th {
+                background-color: #989898;
+            }
+            td:nth-child(-n+2) {
+                text-align: center;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="frame">
+            <nav class="navigator">
+                <h3 class="nav_title">KangChaeRyeon</h3>
+                    <ul class="nav_ul">
+                        <li><a href="Home.html" class="nav_menu">HOME</a></li>
+                        <li><a href="TOPIC.html" class="nav_menu">TOPIC</a></li>
+                        <li><a href="About.html" class="nav_menu">ABOUT</a></li>
+                    </ul>
+            </nav>
+
+            <section class="section_move">
+                <ul>
+                    <li><a href="#s1">정의</a></li>
+                    <li><a href="#s2">가치</a></li>
+                    <li><a href="#s3">직무 분류</a></li>
+                    <li><a href="#s4">기업</a></li>
+                    <li><a href="#s5">자격증</a></li>
+                    <li><a href="#s6">참고자료</a></li>
+                </ul>
+                
+            </section>
+            <section class="section_definition" id="s1">
+                <h1 class="title">빅데이터란?</h1>
+                <p class="text">빅데이터란, 기존 데이터베이스 관리 도구의 능력을 넘어서는 대량의 정형 혹은 비정형 데이터를 포함한 데이터를 말한다. 
+                    IT의 일상화가 이루어지고 있는 오늘날, 컴퓨터의 하드웨어 성능도 높아지고, 인터넷의 속도가 향상되며, 스마트폰의 사용인구도 증가하고, 
+                    여러 다양한 센서들이 개발되었다. 따라 다양하고 막대한 양의 데이터가 빠른 속도로 생성되고 있으며, 이것을 수집, 저장, 관리, 분석할 수 있는 기술을 의미한다. 
+                    빅데이터의 특징은 3V로 표현된다. 3V는 Volume, Velocity, Variety로 Volume은 IT의 일상화가 되며 발생한 막대한 양의 데이터를 의미하며, 
+                    Velocity는 매우 빠른 속도로 데이터가 생성되며, 그것에 맞추어 데이터를 처리한다는 것을 의미한다.
+                    마지막으로 Variety는 데이터의 형태가 다양해지고, 생성 주체가 다양하다는 것을 의미한다.</p>
+            </section>
+
+            <section class="section_Imoortance" id="s2">
+                <h1 class="title">데이터의 가치</h1>
+                <p class="text">데이터는 정보 사회를 움직이는 핵심 연료로 자리매김 되고 있다. 
+                    빅데이터의 분석과 가공방향에 따라 상황인식이나 문제해결 그리고 미래전망 등이 가능해지고, 데이터가 경제적 자산과 경쟁력의 척도로 부각될 수 있다. 
+                    세상은 스마트 단말기의 확산, SNS의 활성화, IOT의 확산, 인공지능의 생활화로 데이터 생산이 더욱 가속화 될 것이며, 점차 빅데이터 기반으로 
+                    만들어진 시스템들이 확대될 것이다. 즉, 앞으로의 4차산업시대에서의 빅데이터의 가치는 더욱 커질것이다.
+                    빅데이터가 전세계적으로 관심을 받는 이유는 신가치 창출 및 경쟁력 강화 수단으로 폭넓게 활용되기 때문이다. 빅데이터를 수집/구축/분석/가공/활용하면 
+                    '불확실한 환경을 제거'하거나 '예측하기 어려운 위험을 최소화' 할 수 있다. 이는 기존 프로세스를 강화하는 차원을 넘어 비즈니스 모델을 바꾸거간 완전히 
+                    새로운 비즈니스 모델을 창조한다. 결과적으로, 기업은 빅데이터 분석 결과로 얻은 정보를 통해 경쟁력을 높일 수 있고, 개인은 더 나은 삶을 살 수 있고, 
+                    국가는 보다 나은 서비스를 국민들에게 제공할 수 있게 된다.
+                </p>
+            </section>
+
+            <section class="section_job" id="s3">
+                <h1 class="title">데이터 관련 직업 분류</h1>
+                <p class="text">
+                    빅데이터 전문가의 직무는 사람들의 행동 패턴 또는 시장의 경제상황 등을 예측하며 데이터 속에 함축된 트랜드나 인사이트를 도출하고 이로부터 
+                    새로운 부가가치를 창출하기 위해 대량의 빅데이터를 관리하고 분석한다.
+                    빅데이터 전문가는 금융분야, 유통분야, 제조 분야, 서비스 분야, 의료 분야, 공공 분야 등 다양한 영역에서 일 할 수 있다.
+                    국내 데이터 분야의 직업은 여러개로 나누어진다. 회사 별로 하는 직무나, 업무 내용이 다르기도 하다. 
+                    한국데이터산업진흥원의 2021 데이터 산업 백서의 국내 데이터 직무 인력 현황을 기준으로 8가지의 직업을 다루었다.
+                </p>
+                <table  id="tabled">
+                    <thead>
+                        <tr><th>번호</th><th>직업</th><th>주요 업무 내용</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr onclick= "changeColor(this)" ondblclick="dbChangeColor(this)">
+                            <td>1</td>
+                            <td>데이터 분석가(Data Analyst)</td>
+                            <td>
+                                <ul>
+                                    <li>정형/비정형 데이터를 식별/관리/조작/분석하여 기업 경영의 의사결정에 활용할 수 있도록 자료를 만들어내는 직무이다. </li>
+                                    <li>통계, 머신러닝, 인공지능 기반 데이터 분석, 분석결과 시각화 업무</li>
+                                    <li>다양한 분석기법을 활용하여 데이터가 보여주는 현상을 해석하고 그 원인을 분석해 정보를 얻는 업무</li>
+                                    <li>핵심 비즈니스를 파악하고 개선하기 위한 실험 설계, 데이터 분석하여 결과를 도출하는 업무</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr onclick= "changeColor(this)" ondblclick="dbChangeColor(this)">
+                            <td>2</td>
+                            <td>데이터 과학자(Data Scientist)</td>
+                            <td>
+                                <ul>
+                                    <li>조직 내외부 데이터의 관리⋅활용⋅분석 체계를 새롭게 만들고, 프로세스 혁신 및 신제품 개발, 마케팅 전략 결정 등의 의사결정을 이끌어내는 직무</li>
+                                    <li>(빅)데이터에서 데이터 간 관계, 패턴, 규칙 등을 찾아내 모형화하고 이에 적용하는 알고리즘을 개발하는 업무</li>
+                                    <li>AI 모델 설계 및 실무 적용, AI 최신 기술 연구와 구현 및 적용 업무</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr onclick= "changeColor(this)" ondblclick="dbChangeColor(this)">
+                            <td>3</td>
+                            <td>데이터 아키텍트(DA, Data Architect)</td>
+                            <td>
+                                <ul>
+                                    <li>전사적 관점의 데이터 기반 IT 정책, 표준화, 구조, 설계 및 이행</li>
+                                    <li>개념적, 논리적, 물리적 데이터 설계 및 관리 체계 수립<br>
+                                        예시) 데이터 아키텍트(DA), 데이터 모델러, 데이터 웨어하우스 아키텍트</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr onclick= "changeColor(this)" ondblclick="dbChangeColor(this)">
+                            <td>4</td>
+                            <td>데이터 개발자(Data Developer)</td>
+                            <td>
+                                <ul>
+                                    <li>데이터(DB)를 활용하여 서비스 개발을 하는 직무</li>
+                                    <li>데이터 활용 및 서비스 제공을 위한 API 개발</li>
+                                    <li>QA 및 오픈 라이브러리 활용 및 개발</li>
+                                    <li>빅데이터 처리를 통한 응용 솔루션 개발 업무</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr onclick= "changeColor(this)" ondblclick="dbChangeColor(this)">
+                            <td>5</td>
+                            <td>데이터 엔지니어(Data Engineer)</td>
+                            <td>
+                                <ul>
+                                    <li>데이터 성능, 서비스, 제품에 대한 기술지원자, 제품 개발자, 유지보수</li>
+                                    <li>머신러닝 모델 학습 및 배포, 도메인 지식 기반 데이터 전처리⋅추출 업무</li>
+                                    <li>대용량 처리가 가능한 데이터 파이프라인 및 플랫폼 설계 및 구축</li>
+                                    <li>(빅)데이터를 저장⋅처리⋅관리하거나 프로그램 개발</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr onclick= "changeColor(this)" ondblclick="dbChangeColor(this)">
+                            <td>6</td>
+                            <td>데이터베이스 관리자(DBA, Database Administrator)</td>
+                            <td>
+                                <ul>
+                                    <li>요구사항 기반으로 데이터 관리 체계를 검토⋅개선⋅관리하는 업무</li>
+                                    <li>데이터(DB) 구성, 변경, 용량, 성능, 가용성(백업, 복구), 보안, 장애, 문제관리 등 운영시스템 관리 업무</li>
+                                    <li>외부 기관과 데이터를 송수신하는 체계를 수립하고, 물리적 보안 및 정보 보호 기능을 운영하는 업무</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr onclick= "changeColor(this)" ondblclick="dbChangeColor(this)">
+                            <td>7</td>
+                            <td>데이터 컨설턴트(Data Consultant)</td>
+                            <td>
+                                <ul>
+                                    <li>성능튜닝, 데이터아키텍쳐, 데이터 기반 문제해결 등을 총칭하는 데이터 컨설팅 직무</li>
+                                    <li>빅데이터 분석을 토대로 기업이 앞으로 나아갈 방향, 해결책 등을 제시하는 업무</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr onclick= "changeColor(this)" ondblclick="dbChangeColor(this)">
+                            <td>8</td>
+                            <td>데이터 기획자</td>
+                            <td>
+                                <ul>
+                                    <li>정제된 DB 및 비정제 영상⋅이미지⋅음성, 데이터 관련 제품⋅서비스 기획과 판매를 위한 데이터 상품 구성</li>
+                                    <li>데이터 활용⋅분석 등을 위한 데이터 큐레이팅⋅코디네이팅 등 데이터 수집 관련 기획 업무</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="section_certificate" id="s4">
+                <h1 class="title">데이터 기업</h1>
+                <p class="text">현재 많은 기업들이 데이터 관련 부서를 만들고, 확대해 가고 있지만, 그 중 LG CNS 라는 기업에 대해 알아보고자 한다.
+                    LG CNS는 LG 그룹 계열 IT 서비스 업체로, 시스템 통합(SI) 업체 Big3로 불리며 특히 SW 기업 매출 규모로 4위에 랭크되어 있는 기업이다.
+                    LG CNS의 AI빅데이터 기술 분야 중 하나는 공장에서 생산되는 제품의 품질 검사, 최적의 생산 환경 도출, 설비 장애 예측과 유지보수 등 공장의 지능화와 
+                    생산성 강화를 위한 빅데이터 분석과 AI 적용이다.
+                </p>
+            </section>
+
+            <section class="section_company" id="s5">
+                <h1 class="title">국내 데이터 전문인력 자격증</h1>
+                <p class="text">데이터 전문인력 자격증으로는 빅데이터 분석기사, 데이터아키텍처 전문가(DAP), SQL 전문가(SQLP), 데이터분석 전문가(ADP) 등이 있다. 한국데이터산업진흥원 2021 데이터산업현황조사 결과보고서에 따르면 데이터산업과 일반산업을 포함한 전 산업에서 데이터 직무 인력 채용 시 우대(예정) 자격증으로 '정보처리기사' 가 42.7%로 가장 높고, '데이터 분석 전문가(ADP)'(19.3%),'SQL 개발자(SQLD)'(16.1%) 등의 순으로 나타났다. 따라 정보처리기사, SQL 개발자, 데이터 분석 전문가에 대해 아래의 표에 기술했다.</p>
+                <table>
+                    <thead>
+                        <tr >
+                            <th>번호</th><th>자격증명</th><th>설명</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr onclick= "changeColor(this)" ondblclick="dbChangeColor(this)">
+                            <td>1</td>
+                            <td>정보처리기사</td>
+                            <td>정보시스템의 생명주기 전반에 걸친 프로젝트 업무를 수행하는 직무로서 계획수립, 분석, 설계, 구현, 시험, 운영 , 유지보수 등의 업무를 수행할 수 있는 전문가자격검정</td>
+                        </tr>
+
+
+                        <tr onclick= "changeColor(this)" ondblclick="dbChangeColor(this)">
+                            <td>2</td>
+                            <td>데이터 분석 전문가(ADP)</td>
+                            <td>데이터 이해 및 처리 기술에 대한 기본지식을 바탕으로 데이터 분석 기획, 데이터 분석, 데이터
+                                시각화 업무를 수행하고 이를 통해 프로세스 혁신 및 마케팅 전략 결정 등의 과학적 의사결정을
+                                지원할 수 있는 전문가자격검정</td>
+                            </tr>
+
+
+                        <tr onclick= "changeColor(this)" ondblclick="dbChangeColor(this)"> 
+                            <td>3</td>
+                            <td>SQL 개발자(SQLD)</td>
+                            <td>데이터베이스와 데이터 모델링에 대한 지식을 바탕으로 응용 소프트웨어를 개발하면서 데이터를
+                                조작하고 추출하는데 있어서 정확하고 최적의 성능을 발휘하는 SQL을 작성 할 수 있는 개발자자격검정</td>
+                        </tr>
+
+
+                    </tbody>
+
+                </table>
+            </section>
+
+            <section class="section_reference" id="s6">
+                <h1 class="title">참고 자료</h1>
+                <p class="text">
+                    <ol>
+                        <li>WORKNET - 빅데이터 전문가</li>
+                        <li>Kdata 한국데이터산업진흥원 - 2021 데이터산업 현황조사 결과 보고서</li>
+                        <li>Kdata 한국데이터산업진흥원 - 2021 데이터산업 백서</li>
+                        <li>Kdata 데이터자격검정</li>
+                    </ol>
+                </p>
+            </section>
+
+        </div>
+            <script>
+                var oBackColor = "#ECECEC";
+                var cBackColor = "#D3D3D3";
+                function changeColor(obj) {
+                    var tbody = obj.parentNode;
+                    var trs = tbody.getElementsByTagName('tr');
+                    for ( var i = 0; i < trs.length; i++ ) {
+                        if ( trs[i] != obj ) {
+                            trs[i].style.backgroundColor = oBackColor;
+                        } else {
+                            trs[i].style.backgroundColor = cBackColor;
+                        }
+                    }
+                }
+                function dbChangeColor(obj) {
+                    var tbody = obj.parentNode;
+                    var trs = tbody.getElementsByTagName('tr');
+                    for(i=0;i<trs.length;i++) {
+                        trs[i].style.backgroundColor=oBackColor;
+                    }
+                }
+            </script>
+    </body>
+
+</html>

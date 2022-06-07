@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>강채련</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Pacifico&family=Roboto&display=swap" rel="stylesheet">
+        <style>
+
+            /* 바디 */
+            body{
+                background-color:#ECECEC;
+            }
+
+            /* 프레임 */
+            .frame {
+                margin: 30px 150px;
+                display:flex;
+                flex-direction: column;
+    
+            }
+
+            /* nav */
+            .navigator {
+                display:flex;
+                flex-direction: row;
+                justify-content: space-between;
+                font-family: 'Roboto', sans-serif;
+            }
+    
+            .nav_ul {
+                margin:0px;
+                padding-top: 10px;
+            }
+            .nav_ul>li {
+                display: inline;
+                align-self: center;
+            }
+    
+            .nav_menu{
+                color:black;
+                text-decoration: none;
+                padding-left: 20px;
+                font-size: 18px;
+    
+            }
+            .nav_title {
+                margin:0px;
+                font-size: 25px;
+                font-family: 'Pacifico', cursive;
+    
+            }
+
+            /* 인트로 */
+            .intro {
+                padding-top: 80px;
+            }
+
+            /* 인트로 사진 */
+            .profilepoto {
+                width: 900px;
+                height:270px;
+                filter: saturate(0%);
+                transition: all 1s;
+            }
+            .profilepoto:hover {
+                filter: saturate(100%);
+            }
+    
+
+
+            /* 인트로 리스트 */
+            .intro>div {
+                display:inline-block;
+        
+            }
+    
+            .intro_list>li {
+                list-style: none;
+                font-size: 25px;
+                margin: 21px 0px;
+                font-weight: bold;
+                font-family: 'Noto Sans KR', sans-serif;
+            }
+
+            /* 주제글 */
+            .topic_explain {
+                padding-top:0px;
+            }
+    
+            .topic_explain .text1 {
+                font-size: 45px;
+                padding-top:25px;
+            }
+            .topic_explain .text1 .type1 {
+                transition: background-color 1s;
+            }
+            .topic_explain .text1 .type1:hover {
+                background-color: pink;
+            }
+            .topic_explain .text1 .type2 {
+                transition: background-color 1s;
+            }
+            .topic_explain .text1 .type2:hover {
+                background-color: rgb(173, 255, 228);
+            }
+            .topic_explain .text1 .type3 {
+                transition: background-color 1s;
+            }
+            .topic_explain .text1 .type3:hover{
+                background-color: rgb(255, 255, 156);
+            }
+
+            /* footer-날짜 */
+            .footer {
+                font-size: 20px;
+                font-family: 'Roboto', sans-serif;
+                font-weight: bold;
+                padding-top:55px;
+            }
+
+            .cursor{
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                border :3px solid #848484;
+                z-index: 9999;
+                background-color: rgba(82, 80, 80, 0.1);
+            }
+        </style>
+    </head>
+    <body onload="today()">
+        <div class="cursor" id="cursor"></div>
+        <div class="frame">
+            <nav class="navigator">
+                <h3 class="nav_title">KangChaeRyeon</h3>
+                    <ul class="nav_ul">
+                        <li><a href="Home.html" class="nav_menu">HOME</a></li>
+                        <li><a href="Topic.html" class="nav_menu">TOPIC</a></li>
+                        <li><a href="About.html" class="nav_menu">ABOUT</a></li>
+                    </ul>
+            </nav>
+            <section class="intro">
+                <div>
+                    <img src="pic01.jpg" class="profilepoto">
+                </div>
+                <div>
+                    <ul class="intro_list">
+                        <li>학교 / 공주대학교</li>
+                        <li>학과 / 소프트웨어공학</li>
+                        <li>학번 / 202001757</li>
+                        <li>이름 / 강채련</li>
+                        <li>과목 / 웹프로그래밍 02분반</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="topic_explain">
+                <h1 class="text1">
+                    제가 관심있는 분야는 <span class="type1">데이터</span> 입니다.<br>
+                    현재 <span class="type2">빅데이터</span>의 가치, 직업의 분류, <br>
+                    <span class="type3">데이터</span>관련 기업, 자격증 중심으로 작성했습니다.</span> 
+                </h1>
+    
+                <p class="text2">저는 아직 구체적인 진로를 정하지 않았습니다. 따라 평소 관심이 있었던 분야를 초점으로 자료 조사를 하고, 관련 내용을 담았습니다. 4차산업 시대에서 데이터는 중요한 역할을 하고 있습니다. 특히, 데이터의 양이 방대해지고, 형태도 다양해져서 데이터를 처리/관리/분석하는 역할은 4차산업 시대에서의 가장 중요한 부분이라고 생각합니다. 데이터가 기업들의 경쟁력이 된다고 생각합니다. 다른 4차산업 기술들이 많이 있지만, 그것들의 바탕이 되는 것이 데이터 분야라고 판단했기에, 이 분야를 선택했습니다. </p>
+    
+            </section>
+            <footer class="footer">
+                <div id="date"></div>
+            </footer>
+        </div>
+        <script>
+            // chapter07. 코어객체와 배열 - Date 사용
+            function today() {
+                var obj=document.getElementById("date");
+                var now=new Date();
+                var year=now.getFullYear();
+                var month=now.getMonth()+1;
+                var day=now.getDate();
+
+                month=getStr(month);
+                day=getStr(day);
+                var str=year+"/"+month+"/"+day;
+                obj.innerHTML="TODAY "+str;
+            }
+
+            // chapter06. 자바스크립트언어 - 조건문(if문) & 함수
+            // 1~9사이면 앞에 0을 붙여 문자열을 반환하는 함수
+            function getStr(num) {
+                if(num<10) {
+                    num="0"+num;
+                }
+                return num;
+            }
+            // chapter09. 이벤트 객체
+            window.onmousemove=cursorMove;
+                function cursorMove(e) {
+                    var div=document.getElementById("cursor");
+                    var x=e.clientX;
+                    var y=e.clientY;
+                    div.style.top=y+"px";
+                    div.style.left=x+"px";
+                }
+        </script>
+    </body>
+
+</html>
